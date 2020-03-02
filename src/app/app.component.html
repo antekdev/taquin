@@ -1,7 +1,14 @@
 <h1>Antek's Taquin</h1>
 <app-settings 
-    (handleGameStatusToggle)='toggleGameStatus($event)'
-    (handleSizeChange)='changeFieldSize($event)'
+    (handleGameStatusToggle)='setGameStatus($event)'
+    (handleSizeChange)='setFieldSize($event)'
+    (handleShuffleStepsChange)='setShuffleSteps($event)'
     [isGameOn]="isGameOn"
 ></app-settings>
-<!-- <app-field></app-field> -->
+<app-field 
+    *ngIf="isGameOn" 
+    [shuffleSteps]="shuffleSteps"
+    [fieldSize]="fieldSize" 
+    (gameMessage)="setGameMessage($event)"
+></app-field>
+<h1 *ngIf="isGameOn">{{gameMessage}}</h1>

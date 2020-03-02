@@ -1,1 +1,3 @@
-<div>{{index}}</div>
+<div [ngStyle]="!index && { 'background-color': 'darkgray'}">
+    <span *ngIf="index">{{index}}</span>
+</div>

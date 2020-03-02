@@ -1,1 +1,7 @@
-<p>field works!</p>
+<div id='field' [ngStyle]='columnsProperty'>
+    <app-tile 
+        *ngFor="let tile of tiles" 
+        [index]="tile"
+        (click)="handleTileClick($event)"   
+    ></app-tile>
+</div>

@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+import { FIELD_SIZE, SHUFFLE_STEPS } from 'src/app/constants'
 
 @Component({
   selector: 'app-settings',
@@ -7,16 +8,20 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
-  size = 4
-  @Output() handleSizeChange = new EventEmitter<number>()
+  size = FIELD_SIZE
+  shuffleSteps = SHUFFLE_STEPS
+
   @Input() isGameOn: boolean
-  @Output() handleGameStatusToggle = new EventEmitter<boolean>()
-  
+
+  @Output() handleSizeChange = new EventEmitter<number>()
+  @Output() handleShuffleStepsChange = new EventEmitter<number>()
+  @Output() handleGameStatusToggle = new EventEmitter<boolean>()  
 
   constructor() { }
 
   ngOnInit() {
-    this.handleSizeChange.emit(4)
+    this.handleSizeChange.emit(FIELD_SIZE)
+    this.handleShuffleStepsChange.emit(SHUFFLE_STEPS)
   }
 
   increaseSize() {
@@ -27,9 +32,23 @@ export class SettingsComponent implements OnInit {
   }
 
   decreaseSize() {
-    if (this.size > 3)  {
+    if (this.size > 3) {
       this.size--
       this.handleSizeChange.emit(this.size)
+    }
+  }
+
+  moreSteps() {
+    if (this.shuffleSteps < 50) {
+      this.shuffleSteps += 5
+      this.handleShuffleStepsChange.emit(this.shuffleSteps)
+    }
+  }
+
+  fewerSteps() {
+    if (this.shuffleSteps > 0) {
+      this.shuffleSteps -= 5
+      this.handleShuffleStepsChange.emit(this.shuffleSteps)
     }
   }
 

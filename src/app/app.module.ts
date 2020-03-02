@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { TileComponent } from './components/field/tile/tile.component';
-import { EmptyTileComponent } from './components/field/empty-tile/empty-tile.component';
 import { FieldComponent } from './components/field/field.component';
 
 @NgModule({
@@ -12,7 +11,6 @@ import { FieldComponent } from './components/field/field.component';
     AppComponent,
     SettingsComponent,
     TileComponent,
-    EmptyTileComponent,
     FieldComponent
   ],
   imports: [

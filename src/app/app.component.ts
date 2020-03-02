@@ -9,15 +9,23 @@ export class AppComponent {
 
   isGameOn: boolean = false
   fieldSize: number
+  gameMessage: string
+  shuffleSteps: number
 
-  toggleGameStatus(status: boolean) {
-    console.log('New game status', status)
+  setGameStatus(status: boolean) {
     this.isGameOn = status
   }
 
-  changeFieldSize(size: number) {
-    console.log('New field size', size)
+  setFieldSize(size: number) {
     this.fieldSize = size
+  }
+
+  setGameMessage(msg: string) {
+    this.gameMessage = msg
+  }
+
+  setShuffleSteps(steps: number) {
+    this.shuffleSteps = steps
   }
 
 }
