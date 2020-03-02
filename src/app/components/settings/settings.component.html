@@ -1,0 +1,10 @@
+<ng-container *ngIf='isGameOn'>
+    <button (click)="endGame()">Back to settings</button>
+</ng-container>
+
+<ng-container *ngIf="!isGameOn">
+    <h2>Field size: {{size}} x {{size}}</h2>
+    <button (click)="increaseSize()">+</button>
+    <button (click)="decreaseSize()">-</button>
+    <button (click)="startGame()">Start</button>
+</ng-container>
