@@ -1,0 +1,9 @@
+.flex-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active-part {
+    width: 80%;
+}

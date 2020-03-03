@@ -3,8 +3,18 @@ body {
     background-color: #333333;
     color: wheat;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
+
+button {
+    background-color: #73AD21; /* Green */
+    border: 1px solid wheat;
+    border-radius: 10%;
+    color: wheat;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+  }
+
 
